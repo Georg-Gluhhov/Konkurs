@@ -1,5 +1,6 @@
 <?php
 require_once ('conf.php');
+include ('logout.php');
 global $yhendus;
 // punktide lisamine UPDATE
 if(isset($_REQUEST['punkt'])) {
@@ -19,7 +20,6 @@ UPDATE konkurss SET kommentaar=CONCAT(kommentaar, ?) WHERE id=?");
     header("Location: $_SERVER[PHP_SELF]");
 }
 
-
 ?>
 <!Doctype html>
 <html lang="et">
@@ -28,9 +28,14 @@ UPDATE konkurss SET kommentaar=CONCAT(kommentaar, ?) WHERE id=?");
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<form action="logout.php" method="post">
+    <input type="submit" value="logout">
+</form>
 <nav>
-    <a href="haldus.php">Administreerimise leht</a>
-    <a href="konkurss.php">Kasutaja leht</a>
+    <a href="haldus.php">Administreerimise leht </a>
+    <a href="konkurss.php">      Kasutaja leht </a>
+    <a href="https://github.com/Georg-Gluhhov/Konkurs">      github</a>
+    <a href="lisamine.php">lisamine</a>
 
 </nav>
 <h1>Fotokonkurss ""</h1>
